@@ -9,6 +9,9 @@
 
 session_start();
 
+ini_set("display_errors", true);
+error_reporting(E_ALL & ~E_WARNING);
+
 require_once 'src/php/utils/utils.global.php';
 require 'src/php/database/class.connect.php';
 

@@ -26,11 +26,18 @@
     <body class="container-fluid">
         <div class="jumbotron jumbotron-fluid">
             <div class="row">
-                <div class="col-sm-5">
-                    <h1>Example for AWanwierdLife</h1>
+                <div class="col-sm-3">
+                    <h1>Example</h1>
                 </div>
-                <div class="col-sm-7">
+                <div class="col-sm-6">
                     <h3 class="display-4"><?= $currPage ?></h3>
+                </div>
+                <div class="col-sm-3">
+                    <?php
+                    if (!empty($_SESSION['username'])) {
+                        echo "<h5>Welcome, {$_SESSION['username']}!</h5>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
