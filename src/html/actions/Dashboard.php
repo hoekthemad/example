@@ -9,6 +9,6 @@
 
 require_once 'src/php/utils/pages/utils.login.php';
 ?>
-<script src="src/javascript/actions.login.js"></script>
+<script src="src/javascript/actions.dashboard.js"></script>
 <div class="container">
 </div>
