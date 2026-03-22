@@ -1,10 +1,22 @@
 <?php
+/**
+ * Globally used functions
+ * 
+ * @author Hoek
+ * @since Mar 22 2026
+ * @revisions 0
+ */
 
+/**
+ * Do the login check to see if a user is currently logged in
+ * 
+ * @author Hoek
+ * @since Mar 22 2026
+ * @revisions 0
+ */
 function doLoginCheck() {
-    if (getPageName() != "Login" || !empty(session_id())) {
-        if (empty($_SESSION['user_id']) || empty($_SESSION['username'])) {
-            header("Location: index.php?action=Login");
-            exit;
-        }
+    if (empty($_SESSION['uid']) || empty($_SESSION['username'])) {
+        header("Location: index.php?action=Login");
+        exit;
     }
 }

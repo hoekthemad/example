@@ -1,4 +1,11 @@
 <?php
+/**
+ * Create a MySQLi connection to a database
+ * 
+ * @author Hoek
+ * @since Mar 22 2026
+ * @revisions 0
+ */
 
 class DbConnect {
     protected $dbinfo = [
@@ -16,6 +23,13 @@ class DbConnect {
         }
     }
 
+    /**
+     * Create a new instance or get the existing one
+     * 
+     * @author Hoek
+     * @since Mar 22 2026
+     * @revisions 0
+     */
     public static function Init() {
         if (empty(self::$instance)) {
             self::$instance = new DbConnect();
@@ -23,6 +37,13 @@ class DbConnect {
         return self::$instance;
     }
 
+    /**
+     * Get the database connection or create new as needed
+     * 
+     * @author Hoek
+     * @since Mar 22 2026
+     * @revisions 0
+     */
     public function getConnection() {
         if (empty(self::$dbConn)) {
             self::$dbConn = new mysqli(
