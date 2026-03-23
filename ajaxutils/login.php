@@ -22,8 +22,8 @@ if ($uname && $pword) {
         $row = $result->fetch_assoc();
         $acctStatus = $row['status'];
         
-        // Check to see if the account is active
-        if ($acctStatus == "Active") {
+        // Check to see if the account is active (not locked)
+        if (!stristr($acctStatus, "Locked")) {
             // Passwords are salty, use it
             $foundPassword = $row['password'];
             $foundSalt = $row['salt'];
