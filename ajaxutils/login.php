@@ -14,7 +14,7 @@ $pword = !empty($_REQUEST['p']) ? $_REQUEST['p'] : false;
 if ($uname && $pword) {
     // Get the user details from the DB
     $stmt = $connection->prepare("SELECT `password`, `salt`, `username`, `uid`, `login_attempts`, `status` FROM users WHERE (username = ? OR email = ?) LIMIT 1");
-    $stmt->bind_param("ss", $uname, $pword);
+    $stmt->bind_param("ss", $uname, $uname);
     $stmt->execute();
     $result = $stmt->get_result();
     // If we have a user...
